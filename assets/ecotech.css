@@ -26,6 +26,10 @@
 
 /* Sitewide */
 
+.ecotech .page {
+    padding: 20px;
+}
+
 .row.collage .col {
     overflow: hidden;
     padding: 0;
