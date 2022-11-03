@@ -23,11 +23,13 @@
     {{ 'colours.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
 </head>
-<body>
-	<p>Pulling data from the Shopify API...</p>
-	{% section 'header' %}
-	{% section 'main' %}
-	{% section 'footer' %}
-	{{ content_for_layout }}
+<body class="ecotech">
+	<div class="page">
+		<p>Pulling data from the Shopify API...</p>
+		{% section 'header' %}
+		{% section 'main' %}
+		{% section 'footer' %}
+		{{ content_for_layout }}
+	</div>
 </body>
 </html>
