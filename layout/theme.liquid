@@ -5,7 +5,10 @@
     {{ content_for_header }}
 </head>
 <body>
-	<p>Pulling data from the Shopify API...</h1>
+	<p>Pulling data from the Shopify API...</p>
+	{% section 'header' %}
+	{% section 'main' %}
+	{% section 'footer' %}
 	{{ content_for_layout }}
 </body>
 </html>
