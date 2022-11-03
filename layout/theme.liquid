@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Eco-Tech Building Solutions</title>
+    <title>
+      {{ page_title -}}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%} {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+    {% if page_description %}
+    	<meta name="description" content="{{ page_description | escape }}" />
+	{% endif %}
+    {%- if settings.favicon != blank -%}
+    	<link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+	{%- endif -%}
+    {{ 'pace-theme-flash.css' | asset_url | stylesheet_tag }}
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+    {{ 'jquery.scrollbar.css' | asset_url | stylesheet_tag }}
+    {{ 'select2.min.css' | asset_url | stylesheet_tag }}
+    {{ 'pages.css' | asset_url | stylesheet_tag }}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ 'ecotech.css' | asset_url | stylesheet_tag }}
+    {{ 'colours.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
 </head>
 <body>
